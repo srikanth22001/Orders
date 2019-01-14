@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Template for Lambda getOrders.'
+Resources:
+    LambdaFunction:
+        Type: 'AWS::Lambda::Function'
+        Properties:
+            FunctionName: testGetOrderPythonCaller
+            Description: 'Test GetOrder Caller Cloud Formation'
+            Runtime: python3.6
+            Code: {S3Bucket: test-lambda-functions1, S3Key: testGetOrderPythonCaller-a9020af6-a3c4-4169-a131-c2313f5bff86.zip}
+            Handler: lambda_function.lambda_handler
+            Role: 'arn:aws:iam::173897442165:role/AWS_Lambda'
+    GetOrdersLambdaFunction:
+        Type: 'AWS::Lambda::Function'
+        Properties:
+            FunctionName: testGetOrderPython
+            Description: 'Test GetOrder Cloud Formation'
+            Runtime: python3.6
+            Code: {S3Bucket: test-lambda-functions1, S3Key: testGetOrderPython-bbaf38e3-a023-4986-b824-30635f4238f9.zip}
+            Handler: postgres_test.lambda_handler
+            Role: 'arn:aws:iam::173897442165:role/AWS_Lambda'
+    OrderCreationLambdaFunction:
+        Type: 'AWS::Lambda::Function'
+        Properties:
+            FunctionName: testOrderCreationPython
+            Description: 'Test OrderCreation Cloud Formation'
+            Runtime: python3.6
+            Code: {S3Bucket: test-lambda-functions1, S3Key: testOrderCreationPyhton-d2f34216-7c70-42dc-a1f5-f16da16b07c5.zip}
+            Handler: postgres_test.lambda_handler
+            Role: 'arn:aws:iam::173897442165:role/AWS_Lambda'
