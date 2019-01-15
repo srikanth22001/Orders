@@ -14,7 +14,7 @@ node {
         echo "Will deploy to ${BUILD_URL}"
    	    mail body: "Please go to URL:${BUILD_URL}", subject: "Job ${JOB_NAME} is waiting for input", to: 'testapps22001@gmail.com'
    	    input ('Do you  want to Approve this Deployment?')
-    
+    }
     
    stage('Deploy') {
         withAWS(credentials: '9383da7b-fad1-49a3-8286-90b6373aee27', region: 'us-east-1') {
