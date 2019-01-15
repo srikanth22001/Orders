@@ -13,7 +13,7 @@ node {
     stage('Approval') {
         echo "Will deploy to ${BUILD_URL}"
    	    mail body: "Please go to URL:${BUILD_URL}", subject: "Job ${JOB_NAME} is waiting for input", to: 'testapps22001@gmail.com'
-   	    input ('Do you just  want to Approve this Deployment?')
+   	    input ('Do you  want to Approve this Deployment?')
     }
     
    stage('Deploy') {
